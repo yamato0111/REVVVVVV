@@ -11,14 +11,17 @@
     </head>
     <body class="antialiased">
         <h1>Blog Name</h1>
+        <a href="/posts/create">create</a>
+        <a href="/kato">kato</a>
         <div class='posts'>
             @foreach($posts as $post)
             <div class='post'>
-                <h2 class='title'>{{ $post->title}}</h2>
-                <p class='body'>{{ $post->body}}</p>
+                <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title }}</a></h2>
+                <p class='body'>{{ $post->body }}</p>
             </div>
             @endforeach
         </div>
-        <div class='pagenate'>{{ $posts->links()}}</div>
+        <div class='pagenate'>{{ $posts->links()}}
+        </div>
     </body>
 </html>
