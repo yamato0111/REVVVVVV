@@ -7,23 +7,16 @@ use illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+    
     public function register()
     {
         //
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
+        \URL::forceScheme('https');
         Paginator::useBootstrap();
+        $this->app['request']->server->set('HTTPS','on');
     }
 }

@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
+
+public function create(Category $category)
+{
+    return view('posts.create')->with(['categories' => $category->get()]);
+}
 
 class PostController extends Controller
 {

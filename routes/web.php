@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-    
-Route::get('/',[PostController::class,'index']);
-Route::get('/posts/{post}',[PostController::class,'show']);
+use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Route;
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');

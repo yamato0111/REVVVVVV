@@ -20,5 +20,6 @@
             @endforeach
         </div>
         <div class='pagenate'>{{ $posts->links()}}</div>
+        {{ Auth::user()->name }}
     </body>
 </html>
